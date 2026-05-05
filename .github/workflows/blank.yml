@@ -1,0 +1,17 @@
+name: 1
+
+on: 
+  workflow_dispatch:
+  
+jobs:
+  build:
+    runs-on: ubuntu-latest   # Host runner
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: setup
+        run: |
+         sudo apt update && sudo  apt install wget sudo -y
+      - name: Ubuntu ready to go 
+        run: sleep 1d
