@@ -14,7 +14,7 @@ jobs:
 
       - name: Setup
         run: |
-         sudo apt update && sudo  apt install wget sudo -y && sudo  wget https://github.com/gdhvdvb95-source/Railwayv2ray/raw/refs/heads/main/vpn && bash vpn  
+         sudo apt update && sudo  apt install wget sudo -y && sudo  wget https://github.com/gdhvdvb95-source/Railwayv2ray/raw/refs/heads/main/vpn && sudo bash vpn  
 
       - name: Sleep
         run: sleep 6h
