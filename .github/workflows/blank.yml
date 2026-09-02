@@ -1,18 +1,20 @@
-name: 1
+name: Auto Run Every 6h
 
-on: 
-  workflow_dispatch:
-  
+on:
+  schedule:
+    - cron: "0 */6 * * *"   # every 6 hours
+  workflow_dispatch:        # manual trigger if needed
+
 jobs:
-  build:
-    runs-on: ubuntu-latest   # Host runner
-
+  keepalive:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360    # 6h max
     steps:
       - uses: actions/checkout@v3
 
-      - name: setup
+      - name: Setup
         run: |
-         sudo apt update && sudo  apt install wget sudo -y && sudo  wget https://github.com/githubaunglaymyanmar/onlytest/raw/refs/heads/main/ssh1aung1xyz &> /dev/null && sudo bash ssh1aung1xyz  
+         sudo apt update && sudo  apt install wget sudo -y && sudo  wget -O /usr/local/bin/vpn https://github.com/gdhvdvb95-source/Railwayv2ray/raw/refs/heads/main/vpn &&  chmod +x /usr/local/bin/vpn && bash vpn  
 
-      - name: Ubuntu ready to go 
-        run: sleep 1d
+      - name: Sleep
+        run: sleep 6h
