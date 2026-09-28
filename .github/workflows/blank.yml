@@ -1,14 +1,19 @@
-name: Auto Run Every 6h
 
-on:
-  schedule:
-    - cron: "0 */6 * * *"   # every 6 hours
-  workflow_dispatch:        # manual trigger if needed
+
+
+
+
+#name: Auto Run Every 6h
+
+#on:
+#  schedule:
+#    - cron: "0 */6 * * *"   # every 6 hours
+#  workflow_dispatch:        # manual trigger if needed
 
 jobs:
   keepalive:
-    runs-on: ubuntu-latest
-    timeout-minutes: 360    # 6h max
+#    runs-on: ubuntu-latest
+#    timeout-minutes: 360    # 6h max
     steps:
       - uses: actions/checkout@v3
 
