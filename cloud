@@ -1,0 +1,13 @@
+sudo apt update && sudo apt install -y curl gnupg lsb-release
+
+# Create the keyring directory if it doesn't exist
+sudo mkdir -p --mode=0755 /usr/share/keyrings
+
+# Download Cloudflare GPG key
+curl -fsSL https://pkg.cloudflareclient.com/pubkey.gpg | sudo gpg --yes --dearmor --output /usr/share/keyrings/cloudflare-warp-archive-keyring.gpg
+
+# Add the repository to your apt sources list
+echo "deb [signed-by=/usr/share/keyrings/cloudflare-warp-archive-keyring.gpg] https://pkg.cloudflareclient.com/ $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/cloudflare-client.list
+
+sudo apt update
+sudo apt install -y cloudflare-warp
