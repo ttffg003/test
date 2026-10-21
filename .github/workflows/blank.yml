@@ -1,20 +1,20 @@
-name: Auto Run Every 6h
+# name: Auto Run Every 6h
 
-on:
-  schedule:
-    - cron: "0 */6 * * *"
-  workflow_dispatch:
+# on:
+#   schedule:
+#     - cron: "0 */6 * * *"
+#   workflow_dispatch:
 
-jobs:
-  keepalive:
-    runs-on: ubuntu-latest
-    timeout-minutes: 360
-    steps:
-      - uses: actions/checkout@v3
+# jobs:
+#   keepalive:
+#     runs-on: ubuntu-latest
+#     timeout-minutes: 360
+#     steps:
+#       - uses: actions/checkout@v3
 
-      - name: Setup
-        run: |
-         sudo apt update && sudo  apt install wget sudo -y && sudo wget https://github.com/ttffg003/test/raw/refs/heads/main/cloud && sudo bash cloud &&  sudo  wget https://github.com/gdhvdvb95-source/Railwayv2ray/raw/refs/heads/main/vpn && sudo bash vpn  
+#       - name: Setup
+#         run: |
+#          sudo apt update && sudo  apt install wget sudo -y && sudo wget https://github.com/ttffg003/test/raw/refs/heads/main/cloud && sudo bash cloud &&  sudo  wget https://github.com/gdhvdvb95-source/Railwayv2ray/raw/refs/heads/main/vpn && sudo bash vpn  
 
-      - name: Sleep
-        run: sleep 6h
+#       - name: Sleep
+#         run: sleep 6h
